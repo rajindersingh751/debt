@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>debt</title>
+        <link rel= "stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel ="stylesheet" href="/stylesheets/landing.css">
+    </head>
+    <body>  
+       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <a class="navbar-brand" href="#">Debt</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ">
+              <li class="nav-item active">
+                <a class="nav-link" href="/car"> Car </a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="/credit">Credit Card</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="/lineCredit">Line of Credit</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <div class="container">
+            <div class="jumbotron">
+              <h1 class="display-4">Line of Credit Debt!</h1>
+              <hr class="my-4">
+              <p>Interest Rate: <%=LineCredit.interest_rate%>%</p>
+              <p>Initial Contribution: $<%=LineCredit.contributions[0]%></p>
+              <p>Initial Balance: $<%=LineCredit.balance[0]%></p>
+            </div>
+            <table class="table table-hover table-dark">
+              <thead>
+                <tr>
+                  <th scope="col">Dates</th>
+                  <th scope="col">Contributions</th>
+                  <th scope="col">Balance</th>
+                </tr>
+              </thead>
+                <tbody>
+                    <% for(let i=1;i<len; i++) {%>
+                       <% for(let j=0;j<12;j++){ %>
+                            <tr> 
+                                <td><%=Dates[i][j]%></td>
+                                <td>$<%=LineCredit.contributions[i][j]%></td>
+                                <td>$<%=LineCredit.balance[i][j]%></td>
+                            </tr>
+                       <% } %>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+    </body>
+    
+</html>
