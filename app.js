@@ -36,5 +36,5 @@ app.get("/lineCredit", (req,res)=>{
 
 
 app.listen(process.env.PORT, process.env.IP, ()=>{
-    console.log("server started");
+    console.log("Server Started");
 });
